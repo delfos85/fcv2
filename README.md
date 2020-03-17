@@ -1,8 +1,11 @@
-# LoginApp
+# Premio Felix Candela III
 
-Cascaron de un login que usaremos en la sección 10 de mi curso de Angular de cero a experto.
+Inicio del proyecto para el sitio encargado de recibir las propuestas de cada participante.
+Angular 8.3
+FireBase
+ -Autentificación.
+ -Storage
+ -Base de Datos
 
-https://www.udemy.com/angular-2-fernando-herrera/?couponCode=ANGULAR-10
-
-
-![](https://github.com/Klerith/angular-login-demoapp/blob/master/src/assets/images/demo.png?raw=true)
+17-Marzo-2020
+Falta iniciar la pagina donde se mostraran todos los archivos de cada usuario para su evaluación.
