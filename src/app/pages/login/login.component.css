@@ -1,0 +1,9 @@
+.login100-form-btn,
+.login100-form-btn:active,
+.login100-form-btn:visited {
+    background-color: #dabdb5 !important;
+}
+
+.login100-form-btn:hover {
+    background-color: #a92e23 !important;
+}

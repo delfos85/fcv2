@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-morada">
+    <a class="navbar-brand" href="#">III Premio Felix Candela</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="mispropuestas">Mis Archivos</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="home">Cargar Archivos</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="archivos">Archivos Generales</a>
+            </li>
+        </ul>
+        <span class="navbar-text" style="color:white;font-size:14px;padding-right: 10px">
+            {{ showEmail() }}/
+            {{ showPass() }}
+        </span>
+        <span class="navbar-text">
+                <button type="button" class="btn btn-danger " (click)="salir()">Salir</button>
+          </span>
+    </div>
+</nav>

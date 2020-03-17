@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1 style="color:white;">MIS ARCHIVOS</h1>
+        <hr style="border-color:white">
+    </div>
+
+
+    <div class="col-md-10">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Formato</th>
+                    <th>Nombre archivo</th>
+                    <th>Preview</th>
+                    <th>Link</th>
+                    <th>Usuario</th>
+                </tr>
+            </thead>
+            <!-- <tbody style="color:white">
+                <tr *ngFor="let item of items | async">
+                    <td>
+                        {{ getFormatoArchivo(item.nombre) | uppercase }}
+                    </td>
+                    <td>
+                        {{ item.nombre | uppercase }}
+                    </td>
+                    <td>
+                        <img *ngIf="!item.nombre.endsWith('pdf')" class="img" [src]="item.url" width="90">
+                        <img *ngIf="item.nombre.endsWith('pdf')" class="img" src="assets/pdf.png" width="50">
+                    </td>
+                    <td><a style="color:white" href="{{item.url}}" target="_blank"><b>Abrir aquí</b></a></td>
+                    <td>{{ item.usuario }}</td>
+                </tr>
+            </tbody> -->
+        </table>
+    </div>
+</div>

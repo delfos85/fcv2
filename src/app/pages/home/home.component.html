@@ -1,0 +1,73 @@
+<div class="row h-100">
+    <div class="col-md-12" style="color:white;">
+        <h1>CARGAR ARCHIVOS</h1>
+        <hr style="border-color:white">
+    </div>
+
+    <div class="col-md-5" style="color:white;">
+        <b>Instrucciones</b>
+        <p class="text-justify">
+            1.-Arrastra tus archivos hasta el recuadro “Deja caer aquí los archivos” y suéltalos. (deben aparecer en la tabla)<br><br> 2.-Haz click en el botón verde “Cargar Archivos”<br> Podrás eliminarlos antes de presionar el botón verde. Revisa tus
+            documentos en Mis Archivos
+
+        </p>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-6" style="color:white;">
+        <b>Características</b>
+        <p class="text-justify">
+            Formato: jpg para paneles y pdf para documentos.<br> Peso máx:15mb por imagen para paneles y 5mb para documentos<br> Nombre:
+
+            <br> Panel 1 (03PFC0000_PANEL1.jpg)<br> Panel 2 (03PFC0000_PANEL2.jpg)<br> Panel 3 (03PFC0000_PANEL3.jpg)<br> Documentos (03PFC0000_DOCUMENTOS.pdf)<br>
+        </p>
+
+    </div>
+    <div class="col-md-12">
+        <hr style="border-color:white">
+        <div class="row">
+            <div class="col-md-4">
+                <h3 style="color:white;">Seleccione archivos</h3>
+
+                <div appNgDropFiles [archivos]="archivos" (mouseSobre)="estaSobreElemento = $event" [ngClass]="{'file-over': estaSobreElemento}" class="well drop-zone">
+                    <h4>Deja caer aquí los archivos</h4>
+                    <img src="assets/agave2.png" width="180">
+
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h3 style="color:white;">Cargar Archivos</h3>
+
+                <button type="button" (click)="cargarImagenes()" [disabled]="archivos.length === 0" class="btn btn-success">Cargar archivos</button>
+                <button type="button" class="btn btn-danger" (click)="limpiarArchivos()">Eliminar</button>
+
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nombre archivo</th>
+                            <th>Tamaño</th>
+                            <th>Progreso</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let archivo of archivos">
+                            <td [ngClass]="{ 'text-green': archivo.progreso >= 100 }">
+                                {{ archivo.nombreArchivo }}
+                            </td>
+                            <td>{{ archivo.archivo.size /1024 / 1024 | number: '.2-2' }} MB</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" [ngStyle]="{'width': archivo.progreso + '%'}"></div>
+                                </div>
+                            </td>
+                            <td [ngClass]="{ 'text-green': archivo.progreso >= 100 }">
+                                {{ archivo.progreso >= 100 ? 'COMPLETADO' : 'PENDIENTE' }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
