@@ -23,6 +23,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { CargaImagenService } from './service/carga-imagen.service';
 import { MispropuestasComponent } from './pages/mispropuestas/mispropuestas.component';
 import { ArchivosComponent } from './pages/archivos/archivos.component';
+import { DetalleComponent } from './pages/detalle/detalle.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ArchivosComponent } from './pages/archivos/archivos.component';
     NavbarComponent,
     NgDropFilesDirective,
     MispropuestasComponent,
-    ArchivosComponent
+    ArchivosComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,

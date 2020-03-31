@@ -6,7 +6,8 @@
 
 
 
-    <!-- <div class="col-md-10">
+    <div class="col-md-10">
+        <button type="button" class="btn btn-primary" routerLink="/archivos">Regresar</button>
         <table class="table table-hover">
             <thead class="thead-dark">
                 <tr>
@@ -31,31 +32,6 @@
                     </td>
                     <td><a style="color:white" href="{{item.url}}" target="_blank"><b>Abrir aquí</b></a></td>
                     <td>{{ item.usuario }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div> -->
-    <div class="col-md-12">
-        <table class="table table-hover">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Password</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody style="color:white">
-                <tr *ngFor="let p of participantes">
-                    <td>
-                        {{ p.nombre | uppercase }}
-                    </td>
-                    <td>
-                        {{ p.correo }}
-                    </td>
-
-                    <td>{{ p.password }}</td>
-                    <td><button type="button" class="btn btn-primary" [routerLink]="['/detalle', p.correo]">Ver Archivos</button></td>
                 </tr>
             </tbody>
         </table>
