@@ -32,6 +32,7 @@ export class ArchivosComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.cargando = true;
     this.participante.getParticipantes()
     .subscribe( resp => {
       this.participantes = resp;

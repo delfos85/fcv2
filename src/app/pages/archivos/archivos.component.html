@@ -4,39 +4,8 @@
         <hr style="border-color:white">
     </div>
 
-
-
-    <!-- <div class="col-md-10">
-        <table class="table table-hover">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Formato</th>
-                    <th>Nombre archivo</th>
-                    <th>Preview</th>
-                    <th>Link</th>
-                    <th>Usuario</th>
-                </tr>
-            </thead>
-            <tbody style="color:white">
-                <tr *ngFor="let item of items | async">
-                    <td>
-                        {{ getFormatoArchivo(item.nombre) | uppercase }}
-                    </td>
-                    <td>
-                        {{ item.nombre | uppercase }}
-                    </td>
-                    <td>
-                        <img *ngIf="!item.nombre.endsWith('pdf')" class="img" [src]="item.url" width="90">
-                        <img *ngIf="item.nombre.endsWith('pdf')" class="img" src="assets/pdf.png" width="50">
-                    </td>
-                    <td><a style="color:white" href="{{item.url}}" target="_blank"><b>Abrir aquí</b></a></td>
-                    <td>{{ item.usuario }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div> -->
     <div class="col-md-12">
-        <table class="table table-hover">
+        <table class="table table-hover" *ngIf="!cargando && participantes.length > 0">
             <thead class="thead-dark">
                 <tr>
                     <th>No. Archivos</th>
@@ -59,5 +28,22 @@
                 </tr>
             </tbody>
         </table>
+
+        <div *ngIf="cargando" class="alert text-center mt-3">
+            <h3 class="alert-heading" style="color:white">Cargando</h3>
+            <p>
+                <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+            </p>
+            <p class="mb-0">
+                Espere por favor
+            </p>
+        </div>
+
+        <div *ngIf="!cargando && participantes.length === 0" class="alert text-center mt-3">
+            <h4 class="alert-heading" style="color:white">No hay registros</h4>
+            <p>
+                <i class="fa fa-exclamation fa-2x"></i>
+            </p>
+        </div>
     </div>
 </div>

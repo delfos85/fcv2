@@ -6,6 +6,7 @@ import { CargaImagenService } from '../../service/carga-imagen.service';
 import { NgForm } from '@angular/forms';
 import { ParticipantesServiceService } from '../../service/participantes-service.service';
 import { ParticipantesModel } from 'src/app/models/participantes';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -35,6 +36,7 @@ export class HomeComponent implements OnInit {
   }
 
   cargarImagenes(){
+
     this.cargaImagenes.cargarImagenesFirebase(this.archivos, this.showEmail());
 
     this.usuario.correo = this.showEmail();
